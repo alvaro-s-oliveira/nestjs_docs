@@ -36,24 +36,26 @@ Quando a segunda versão foi lançada, ela foi entitulada OpenAPI 2.0 e mais rec
 ![OpenAPI Comparison](./assets/openapi.jpg "OpenAPI Comparison 2.0 vs 3.0")
 <br><br>
 
-## Como utilizar a OpenAPI no NestJS?
+## OpenAPI no NestJS
 
 <br>
-NestJS na verdade possui um módulo dedicado para gerar documentação da OpenAPI que facilita e muito na hora de implementar a especificação, com decoradores dedicados para cada necessidade do schema da OpenAPI. Aqui irei citar alguns dos decoradores e as principais vantagens de utilizar o módulo do NestJS.
+NestJS na verdade possui um módulo dedicado para gerar documentação da OpenAPI que facilita e muito na hora de implementar a especificação, com decoradores dedicados para cada necessidade do schema da OpenAPI. Aqui irei citar alguns dos decoradores e as principais vantagens de utilizar o módulo do NestJS:
 <br><br>
+
 <b>@ApiTags</b> - pode ser utilizado no controller para definir uma tag para todos os métodos de uma vez só, muito útil já que no schema do OpenAPI ele deve definir tags para cada request.
-<br><br>
+
 <b>@ApiProperty</b> - pode ser utilizado nos Dtos para definir atributos da API.
-<br><br>
+
 <b>@ApiHeaders</b> - pode ser utilizado nos controllers para definir headers da requisição da API.
-<br><br>
+
 <b>@ApiResponse</b> - pode ser utilizado nas requisições REST para definir respostas da API.
-<br><br>
+
 <b>@ApiBearerAuth</b> - indica a necessidade de autenticação para chamar uma requisição, pode ser usado tanto no controller quanto em métodos específicos.
-<br><br>
+
 <b>Dtos em Schema</b> - As ApiProperties nos Dtos definem os Schemas que são utilizados pelo OpenAPI.
 <br><br>
+Para ir além dessa introdução aqui estão os links para documentação oficial do NestJS em OpenAPI e também um vídeo tutorial que mostra como aplicar o Swagger no NestJS por Paulo Salvatore:
 
-<b>Outros</b> - [Documentação OpenAPI NestJS](https://docs.nestjs.com/openapi/introduction)
+<b>Documentação:</b> [Documentação OpenAPI NestJS](https://docs.nestjs.com/openapi/introduction)
 
-<br><br>
+<b>Tutorial:</b> [Como aplicar Swagger em NestJS](https://www.youtube.com/watch?v=fshX_252HbU)
