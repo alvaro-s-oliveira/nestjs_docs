@@ -1,13 +1,13 @@
 # Documentação de API no NestJS
 
-Ao iniciarmos um projeto de backend com o design de uma API em mente, normalmente no nosso fluxo de desenvolvimento a primeira coisa que fazemos é utilizar um simulador de requisições como o Insomnia ou o Postman para que possamos fazer as chamadas REST sem ter a necessidade de um cliente web, que pode ser implementado pela equipe do frontend, podendo assim desenvolver a API sem travas e dependências de outras equipes. E com a possibilidade de automatizar o fluxo de requests, pegando a resposta de um request e inserindo em outro automaticamente facilita demais os testes de fluxo para os desenvolvedores.
+Ao iniciarmos um projeto de backend com o design de uma API em mente, normalmente no nosso fluxo de desenvolvimento a primeira coisa que fazemos é utilizar um simulador de requisições como o [Insomnia](https://insomnia.rest/) ou o [Postman](https://www.postman.com/) para que possamos fazer as chamadas REST sem ter a necessidade de um cliente web, que pode ser implementado pela equipe do frontend, podendo assim desenvolver a API sem travas e dependências de outras equipes. E com a possibilidade de automatizar o fluxo de requests, pegando a resposta de um request e inserindo em outro automaticamente facilita demais os testes de fluxo para os desenvolvedores.
 <br>
 
 ![Insomnia](./assets/insomnia.png "Insomnia")
 
 <br>
 
-## Porque então usar o Swagger/OpenAPI quando você pode utilizar sua API REST definida no Insomnia/Postman?
+## Porque então usar o [Swagger](https://swagger.io/)/[OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md) quando você pode utilizar sua API REST definida no Insomnia/Postman?
 
 <br>
 
