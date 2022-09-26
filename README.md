@@ -117,6 +117,7 @@ export class CreateUserDto {
 
 <br>
 Para ir além dessa introdução, aqui estão os links para documentação oficial do NestJS em OpenAPI e também um vídeo tutorial que mostra como aplicar o Swagger no NestJS por Paulo Salvatore:
+<br><br>
 
 <b>Documentação:</b> [Documentação OpenAPI NestJS](https://docs.nestjs.com/openapi/introduction)
 
