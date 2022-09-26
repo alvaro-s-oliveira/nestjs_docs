@@ -44,6 +44,20 @@ Quando a segunda versão foi lançada, ela foi entitulada OpenAPI 2.0 e mais rec
 NestJS na verdade possui um módulo dedicado para gerar documentação da OpenAPI que facilita e muito na hora de implementar a especificação, com decoradores dedicados para cada necessidade do schema da OpenAPI. Aqui irei citar alguns dos decoradores e as principais vantagens de utilizar o módulo do NestJS:
 <br><br>
 
+## Instalação
+
+Com npm:
+
+```bash
+$ npm install --save @nestjs/swagger
+```
+
+Ou yarn:
+
+```bash
+$ yarn add @nestjs/swagger
+```
+
 <b>@ApiTags</b> - pode ser utilizado no controller para definir uma tag para todos os métodos de uma vez só, muito útil já que no schema do OpenAPI ele deve definir tags para cada request.
 
 ```typescript
