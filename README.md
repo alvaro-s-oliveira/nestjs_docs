@@ -58,6 +58,8 @@ Ou yarn:
 $ yarn add @nestjs/swagger
 ```
 
+## Decoradores
+
 <b>@ApiTags</b> - pode ser utilizado no controller para definir uma tag para todos os métodos de uma vez só, muito útil já que no schema do OpenAPI ele deve definir tags para cada request.
 
 ```typescript
@@ -129,7 +131,8 @@ export class CreateUserDto {
 }
 ```
 
-<br>
+## Links Úteis
+
 Para ir além dessa introdução, aqui estão os links para documentação oficial do NestJS em OpenAPI e também um vídeo tutorial que mostra como aplicar o Swagger no NestJS por Paulo Salvatore:
 <br><br>
 
