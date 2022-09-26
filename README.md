@@ -98,10 +98,15 @@ export class UserController {}
 import { ApiProperty } from "@nestjs/swagger";
 
 export class CreateUserDto {
+  // note here that ApiProperty can be called without any properties
   @ApiProperty()
   name: string;
-
-  @ApiProperty()
+  // or with more properties with a better definition
+  @ApiProperty({
+    description: "The age of the user",
+    minimum: 1,
+    default: 1,
+  })
   age: number;
 
   @ApiProperty()
