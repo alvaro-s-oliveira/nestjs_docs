@@ -1,6 +1,8 @@
 # Documentação de API no NestJS
 
-Ao iniciarmos um projeto de backend com o design de uma API em mente, normalmente no nosso fluxo de desenvolvimento a primeira coisa que fazemos é utilizar um simulador de requisições como o [Insomnia](https://insomnia.rest/) ou o [Postman](https://www.postman.com/) para que possamos fazer as chamadas REST sem ter a necessidade de um cliente web, que pode ser implementado pela equipe do frontend, podendo assim desenvolver a API sem travas e dependências de outras equipes. E com a possibilidade de automatizar o fluxo de requests, pegando a resposta de um request e inserindo em outro automaticamente facilita demais os testes de fluxo para os desenvolvedores.
+Ao iniciarmos um projeto de backend com o design de uma API em mente, normalmente no nosso fluxo de desenvolvimento a primeira coisa que fazemos é utilizar um simulador de requisições como o [Insomnia](https://insomnia.rest/) ou o [Postman](https://www.postman.com/) para que possamos fazer as chamadas REST sem ter a necessidade de um cliente web, que pode ser implementado pela equipe do frontend, podendo assim desenvolver a API sem travas e dependências de outras equipes.
+
+E com a possibilidade de automatizar o fluxo de requests, pegando a resposta de um request e inserindo em outro automaticamente facilita demais os testes de fluxo para os desenvolvedores. No entanto em outras situações em que é necessário uma documentação de uma qualidade melhor essas ferramnetas já não são ideais, e é aí que entram o Swagger e o OpenAPI.
 <br>
 
 ![Insomnia](./assets/insomnia.png "Insomnia")
@@ -44,16 +46,70 @@ NestJS na verdade possui um módulo dedicado para gerar documentação da OpenAP
 
 <b>@ApiTags</b> - pode ser utilizado no controller para definir uma tag para todos os métodos de uma vez só, muito útil já que no schema do OpenAPI ele deve definir tags para cada request.
 
+```typescript
+@ApiTags("user")
+@Controller("user")
+export class UserController {}
+```
+
 <b>@ApiProperty</b> - pode ser utilizado nos Dtos para definir atributos da API.
+
+```typescript
+@ApiProperty({
+  description: 'The age of the user',
+  minimum: 1,
+  default: 1,
+})
+age: number;
+```
 
 <b>@ApiHeaders</b> - pode ser utilizado nos controllers para definir headers da requisição da API.
 
+```typescript
+@ApiHeader({
+  name: "X-Authorization-AWS",
+  description: "AWS authorization header",
+})
+@Controller("user")
+export class UserController {}
+```
+
 <b>@ApiResponse</b> - pode ser utilizado nas requisições REST para definir respostas da API.
+
+```typescript
+@Post()
+@ApiResponse({ status: 201, description: 'The record has been successfully created.'})
+@ApiResponse({ status: 403, description: 'Forbidden.'})
+async create(@Body() createUserDto: CreateUserDto) {
+  this.userService.create(createUserDto);
+```
 
 <b>@ApiBearerAuth</b> - indica a necessidade de autenticação para chamar uma requisição, pode ser usado tanto no controller quanto em métodos específicos.
 
+```typescript
+@ApiBasicAuth()
+@Controller("user")
+export class UserController {}
+```
+
 <b>Dtos em Schema</b> - As ApiProperties nos Dtos definem os Schemas que são utilizados pelo OpenAPI.
-<br><br>
+
+```typescript
+import { ApiProperty } from "@nestjs/swagger";
+
+export class CreateUserDto {
+  @ApiProperty()
+  name: string;
+
+  @ApiProperty()
+  age: number;
+
+  @ApiProperty()
+  address: string;
+}
+```
+
+<br>
 Para ir além dessa introdução aqui estão os links para documentação oficial do NestJS em OpenAPI e também um vídeo tutorial que mostra como aplicar o Swagger no NestJS por Paulo Salvatore:
 
 <b>Documentação:</b> [Documentação OpenAPI NestJS](https://docs.nestjs.com/openapi/introduction)
