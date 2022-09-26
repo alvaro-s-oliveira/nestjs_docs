@@ -101,6 +101,7 @@ export class CreateUserDto {
   // note here that ApiProperty can be called without any properties
   @ApiProperty()
   name: string;
+
   // or with more properties with a better definition
   @ApiProperty({
     description: "The age of the user",
